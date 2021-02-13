@@ -27,30 +27,51 @@ class Auth implements AuthBase {
 
   @override
   Future<User> signInWithGoogle() async {
-    final googleSignIn = GoogleSignIn();
-    final googleUser = await googleSignIn.signIn();
+    print("succed!");
+    GoogleSignIn googleSignIn = GoogleSignIn();
+    GoogleSignInAccount googleUser = await googleSignIn.signIn();
+ 
     if (googleUser != null) {
-      final googleAuth = await googleUser.authentication;
-      if (googleAuth.idToken != null) {
-        final userCredential = await _firebaseAuth
+      GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+      if (googleAuth.idToken != null && googleAuth.accessToken != null) {
+        final _user = await _firebaseAuth
             .signInWithCredential(GoogleAuthProvider.credential(
           idToken: googleAuth.idToken,
           accessToken: googleAuth.accessToken,
         ));
-        return userCredential.user;
+        return _user.user;
       } else {
-        throw FirebaseAuthException(
-          code: 'ERROR_MISSING_GOOGLE_ID_TOKEN',
-          message: 'Missing Google ID Token',
-        );
+        throw Exception('Missing Google Auth Token');
       }
     } else {
-      throw FirebaseAuthException(
-        code: 'ERROR_ABORTED_BY_USER',
-        message: 'Sign in aborted by user',
-      );
+      throw Exception('Google sign in aborted');
     }
   }
+  // Future<User> signInWithGoogle() async {
+  //   final googleSignIn = GoogleSignIn();
+  //   final googleUser = await googleSignIn.signIn();
+  //   if (googleUser != null) {
+  //     final googleAuth = await googleUser.authentication;
+  //     if (googleAuth.idToken != null) {
+  //       final userCredential = await _firebaseAuth
+  //           .signInWithCredential(GoogleAuthProvider.credential(
+  //         idToken: googleAuth.idToken,
+  //         accessToken: googleAuth.accessToken,
+  //       ));
+  //       return userCredential.user;
+  //     } else {
+  //       throw FirebaseAuthException(
+  //         code: 'ERROR_MISSING_GOOGLE_ID_TOKEN',
+  //         message: 'Missing Google ID Token',
+  //       );
+  //     }
+  //   } else {
+  //     throw FirebaseAuthException(
+  //       code: 'ERROR_ABORTED_BY_USER',
+  //       message: 'Sign in aborted by user',
+  //     );
+  //   }
+  // }
 
   @override
   Future<void> signOut() async {

@@ -42,26 +42,7 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/facebook-logo.png
-    - images/google-logo.png
-    - images/wall1.png
-    - images/wall2.png
-    - images/wall3.png
-    - images/wall4.png
-    - images/wall5.png
-    - images/wall6.png
-    - images/wall7.png
-    - images/wall8.png
-    - images/wall9.png
-    - images/wall10.png
-    - images/wall11.png
-    - images/wall12.png
-    - images/wall13.png
-    - images/wall14.png
-    - images/wall15.png
-    - images/wall16.png
-    - images/wall17.png
-    - images/wall18.png
+    - images/
   
 
   # An image asset can refer to one or more resolution-specific "variants", see

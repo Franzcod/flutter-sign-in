@@ -73,7 +73,7 @@ class SignInPage extends StatelessWidget {
               text: "Con cuenta de Email",
               textColor: Colors.black87,
               color: Colors.greenAccent[200],
-              onPressed: (){},
+              onPressed: _signInWithGoogle,
             ),
             SizedBox(height: 8.0,),
             SocialSignInButton(
