@@ -94,6 +94,8 @@ class _EmailSignInFormState extends State<EmailSignInFormChangeNotifier> {
           ) 
         : Center(child: Container(width: 45,height: 45,child: CircularProgressIndicator(strokeWidth: 8.0,))),
 
+        //cambios
+
       SizedBox(height: 10.0),
       SignInButton(
         text: model.secondaryButtonText,
