@@ -6,7 +6,7 @@ class CustomButton extends StatelessWidget {
   CustomButton({
     this.child,
     this.color,
-    this.borderRadius : 2.0,
+    this.borderRadius : 8.0,
     this.height : 50.0,
     this.onPressed
   });

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_google_sign_in/app/landing_page.dart';
 import 'package:flutter_google_sign_in/services/auth.dart';
+import 'package:provider/provider.dart';
 
 
 Future<void> main() async {
@@ -14,15 +15,18 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Mano',
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
+    return Provider<AuthBase>(
+      create: (context) => Auth(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Mano',
+        theme: ThemeData(
+          primaryColor: Color(0xff14D9A5),
+          
+          accentColor: Color(0xffffb300),
+        ),
+        home: LandingPage()
       ),
-      home: LandingPage(
-        auth: Auth(),
-      )
     );
   }
 }

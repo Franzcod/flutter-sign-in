@@ -5,6 +5,7 @@ class SignInButton extends CustomButton{
   SignInButton({
     @required String text,
     Color color,
+    //double borderRadius,
     Color textColor,
     VoidCallback onPressed,
 }) :    assert(text != null),
@@ -15,6 +16,7 @@ class SignInButton extends CustomButton{
     ),
     color: color,
     height: 50.0,
+    //borderRadius: 8.0,
     onPressed: onPressed,
   );
 }

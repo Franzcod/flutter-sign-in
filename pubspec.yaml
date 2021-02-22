@@ -24,9 +24,19 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.0
+
   firebase_auth: ^0.20.0+1
   firebase_core: ^0.7.0
+  cloud_firestore: ^0.16.0+1
+
+  flutter_login_facebook: ^0.5.0
+  google_fonts: ^1.1.2
   google_sign_in: ^4.5.9
+  #alert dialog con gif
+  giffy_dialog: ^1.8.0
+  provider: ^4.3.3
+  #para abrir web views
+  url_launcher: ^5.7.10
 
 dev_dependencies:
   flutter_test:
@@ -43,8 +53,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/
-  
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
